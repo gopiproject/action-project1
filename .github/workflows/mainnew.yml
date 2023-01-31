@@ -1,0 +1,30 @@
+name: Custom workflow
+on:
+  push:
+  pull_request:
+      branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+    build:
+        name: build
+        runs-on: ubuntu-latest
+        steps:
+             - uses: actions/checkout@v3
+             - name: Greet User
+               run: echo Welcome to Actions
+
+    test:
+        name: Test
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Greet User1
+              run: echo Welcome to Actions1
+    deploy:
+        name: Deploy
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Greet User2
+              run: echo Welcome to Actions2         
+        
